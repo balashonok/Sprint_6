@@ -22,3 +22,7 @@ class TransitionPage(BasePage):
     def check_redirect_dzen(self):
         self.switch_to_new_window()
         self.wait_title('Дзен')
+
+    @allure.step('Получение текущего URL')
+    def get_current_url(self):
+        self.get_url()

@@ -1,5 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium import webdriver
 
 from conftests import firefox
 
@@ -60,3 +61,6 @@ class BasePage:
 
     def wait_title(self, expected_title):
         return self.wait.until(EC.title_contains(expected_title))
+
+    def get_url(self):
+        return self.firefox.current_url

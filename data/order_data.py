@@ -3,7 +3,6 @@ from datetime import datetime, timedelta
 
 today = datetime.now().strftime("%d.%m.%Y")
 tomorrow = (datetime.now() + timedelta(days=1)).strftime("%d.%m.%Y")
-print(tomorrow)
 
 ORDER_DATA = [
     {

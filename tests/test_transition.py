@@ -12,11 +12,11 @@ class TestTransition:
         page = TransitionPage(firefox)
         page.click_to_yandex()
         page.check_redirect_dzen()
-        assert firefox.current_url == URLs.YANDEX
+        assert page.get_url() == URLs.YANDEX
 
     @allure.title('Проверка перехода на лого "Самокат"')
     def test_transition_scooter(self, firefox):
         page = TransitionPage(firefox)
         page.click_to_order()
         page.click_to_logo()
-        assert firefox.current_url == URLs.MAIN_PAGE
+        assert page.get_url() == URLs.MAIN_PAGE

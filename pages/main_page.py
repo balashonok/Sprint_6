@@ -1,8 +1,6 @@
 import allure
 
-from conftests import firefox
 from locators.main_page_locators import MainPageLocators
-from locators.main_page_locators import OrderLocators
 from pages.base_page import BasePage
 
 
@@ -18,11 +16,3 @@ class MainPage(BasePage):
     def get_answer_text(self, num):
         locator_a_formatted = self.format_locators(MainPageLocators.ANSWER_LOCATORS, num)
         return self.get_text_from_element(locator_a_formatted)
-
-    def click_order_hat(self, firefox):
-        # WebDriverWait(firefox, 3).until(expected_conditions.element_to_be_clickable(OrderLocators.HEADER_ORDER))
-        firefox.find_element(*OrderLocators.HEADER_ORDER).click()
-
-    def click_order_bottom(self, firefox):
-        # WebDriverWait(firefox, 3).until(expected_conditions.element_to_be_clickable(OrderLocators.HEADER_ORDER))
-        firefox.find_element(*OrderLocators.BOTTOM_ORDER).click()
